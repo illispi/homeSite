@@ -4,11 +4,12 @@ import mdx from "@astrojs/mdx";
 import remarkGfm from "remark-gfm";
 import remarkSmartypants from "remark-smartypants";
 import rehypeExternalLinks from "rehype-external-links";
+import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://delvis.org",
-  integrations: [mdx(), solid()],
+  integrations: [mdx(), solid(), tailwind()],
   output: "static",
   markdown: {
     shikiConfig: {
