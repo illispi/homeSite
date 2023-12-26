@@ -82,16 +82,16 @@ Adipisicing voluptate ipsum culpa voluptate id aute laboris labore esse fugiat v
 ### Ordered List
 
 1. Longan
-2. Lychee
-3. Excepteur ad cupidatat do elit laborum amet cillum reprehenderit consequat quis.
+1. Lychee
+1. Excepteur ad cupidatat do elit laborum amet cillum reprehenderit consequat quis.
    Deserunt officia esse aliquip consectetur duis ut labore laborum commodo aliquip aliquip velit pariatur dolore.
-4. Marionberry
-5. Melon
+1. Marionberry
+1. Melon
    - Cantaloupe
    - Honeydew
    - Watermelon
-6. Miracle fruit
-7. Mulberry
+1. Miracle fruit
+1. Mulberry
 
 ### Unordered List
 
@@ -171,10 +171,10 @@ Ex amet id ex aliquip id do laborum excepteur exercitation elit sint commodo occ
 
 ```html
 <script>
-  let count = 0
+  let count = 0;
 
   function handleClick() {
-    count += 1
+    count += 1;
   }
 </script>
 
