@@ -1,12 +1,12 @@
-FROM node:alpine AS build
+FROM node:20-alpine AS build
 WORKDIR /app
 COPY . .
 RUN npm i
 RUN npm run prod
 
-FROM node:alpine as static
+FROM node:20-alpine as static
 COPY --from=build /app/dist /container
-COPY --from=build entrypoint.sh entrypoint.sh
+COPY --from=build /app/entrypoint.sh ./entrypoint.sh
 
 RUN chmod +x ./entrypoint.sh
 
