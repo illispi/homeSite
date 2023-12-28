@@ -1,3 +1,9 @@
 #!/bin/sh
 
-mkdir -p static  && cp /container/. /static  && sleep infinity
+DIRECTORY="/static"
+
+if [ -d "$DIRECTORY" ]; then
+  rm -rf $DIRECTORY
+fi
+
+mkdir -p static  && cp -r /container/. /static  && sleep infinity
