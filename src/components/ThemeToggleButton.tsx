@@ -30,7 +30,6 @@ const ThemeToggleButton: Component<{}> = (props) => {
   const [theme, setTheme] = createSignal<"light" | "dark">(test());
 
   createEffect(() => {
-    console.log(theme());
     if (rootEl && theme() === "light") {
       rootEl.classList.remove("theme-dark");
     } else if (rootEl && theme() === "dark") {
