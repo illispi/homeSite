@@ -4,24 +4,33 @@ import {
   createEffect,
   Show,
   createSignal,
+  createRenderEffect,
 } from "solid-js";
 
 const ThemeToggleButton: Component<{}> = (props) => {
   const rootEl =
     typeof document !== "undefined" ? document.documentElement : null;
   const themes = ["light", "dark"];
-  const [theme, setTheme] = createSignal<"light" | "dark">("light");
 
-  if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-    setTheme(localStorage.getItem("theme") ?? "light");
-  } else if (
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  ) {
-    setTheme("dark");
-  }
+  const test = () => {
+    if (rootEl?.classList.contains("theme-dark")) {
+      return "dark";
+    } else if (
+      typeof localStorage !== "undefined" &&
+      localStorage.getItem("theme")
+    ) {
+      return localStorage.getItem("theme") ?? "light";
+    } else if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      return "dark";
+    }
+  };
+  const [theme, setTheme] = createSignal<"light" | "dark">(test());
 
   createEffect(() => {
+    console.log(theme());
     if (rootEl && theme() === "light") {
       rootEl.classList.remove("theme-dark");
     } else if (rootEl && theme() === "dark") {
