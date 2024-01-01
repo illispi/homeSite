@@ -278,3 +278,26 @@ input[name="theme-toggle"] {
     margin: 1em 0;
   }
 }
+
+@keyframes slideOutFade {
+  from {
+    transform: translateX(0%);
+    opacity: 100%;
+  }
+
+  to {
+    transform: translateX(-100px);
+    opacity: 0%;
+  }
+}
+@keyframes slideInFade {
+  from {
+    transform: translateX(100px);
+    opacity: 0%;
+  }
+
+  to {
+    transform: translateX(0%);
+    opacity: 100%;
+  }
+}
