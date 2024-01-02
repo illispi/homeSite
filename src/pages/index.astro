@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import { Image } from "astro:assets";
 import landscape from "../images/landscape.jpg";
+import middle from "../images/middle.png";
 
 const title = "My Astro Blog";
 const description = "The perfect starter for your perfect blog.";
@@ -10,13 +11,26 @@ const permalink = Astro.site.href;
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
-  <div
-    class="flex items-center justify-around mx-8 min-h-96 flex-col py-24 gap-24 lg:flex-row"
-  >
-    <h1 class="text-center text-9xl font-semibold text-amber-400">Hello!</h1>
+  <div class="bg-zinc-800 w-screen flex justify-center items-center">
+    <div
+      class="flex items-center justify-around h-full flex-col lg:flex-row w-full max-w-screen-xl"
+    >
+      <!-- <div
+      class="absolute bg-zinc-800 -top-[500px] -left-3/4 w-screen h-[1200px] rotate-[17deg] -z-20"
+      >
+    </div> -->
+      <div class="flex justify-center items-center flex-col">
+        <h1
+          class="text-center text-9xl font-semibold text-amber-400 bg-zinc-800"
+        >
+          Hello!
+        </h1>
+      </div>
+      <Image src={middle} alt="divider" height={600} />
 
-    <div class="rounded-full overflow-hidden">
-      <Image src={landscape} alt="Snowy landscape" height={500} />
+      <div class="rounded-full overflow-hidden">
+        <Image src={landscape} alt="Snowy landscape" height={500} width={500} />
+      </div>
     </div>
   </div>
   <h2 class="flex-1 text-center text-amber-400 text-6xl font-semibold py-20">

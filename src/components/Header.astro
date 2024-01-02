@@ -6,7 +6,9 @@ import blogLogo from "../images/blogLogo.png";
 const { current = "" } = Astro.props;
 ---
 
-<header class="flex justify-around bg-zinc-800 w-screen py-2">
+<header
+  class="flex justify-around w-screen py-2 bg-gradient-to-t to-amber-400 from-amber-600"
+>
   <div class="flex items-center justify-between max-w-screen-xl w-full">
     <a href="/">
       <Image src={blogLogo} alt="Logo" width={50} />
