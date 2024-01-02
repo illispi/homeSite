@@ -48,16 +48,16 @@ const socialUrl = Astro.site.href + "assets/social.png";
     (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
   ) {
     console.log("removed", root, theme);
-    root.classList.add("theme-dark");
+    root.classList.add("dark");
   } else {
-    root.classList.remove("theme-dark");
+    root.classList.remove("dark");
   }
 </script>
 
 <script>
   document.addEventListener("astro:after-swap", () => {
     localStorage.theme === "dark"
-      ? document.documentElement.classList.add("theme-dark")
-      : document.documentElement.classList.add("theme-light");
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.add("light");
   });
 </script>

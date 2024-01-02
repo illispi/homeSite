@@ -1,20 +1,17 @@
 ---
-import Logo from "./Logo.astro";
 import Nav from "./Nav.astro";
+import { Image } from "astro:assets";
+import blogLogo from "../images/blogLogo.png";
 
 const { current = "" } = Astro.props;
 ---
 
-<style>
-  header {
-    display: flex;
-    margin: 0 auto;
-    max-width: 1400px;
-    width: 100%;
-  }
-</style>
+<header class="flex justify-around bg-zinc-900 w-screen py-2">
+  <div class="flex items-center justify-between max-w-screen-xl w-full">
+    <a href="/">
+      <Image src={blogLogo} alt="Logo" width={50} />
+    </a>
 
-<header class="bg-zinc-900 w-screen">
-  <Logo />
-  <Nav current={current} />
+    <Nav current={current} />
+  </div>
 </header>
