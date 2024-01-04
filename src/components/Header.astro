@@ -7,7 +7,7 @@ const { current = "" } = Astro.props;
 ---
 
 <header
-  transition:name="header"
+  
   class="flex justify-around w-screen py-2 bg-gradient-to-t to-amber-400 from-amber-500 sticky top-0"
 >
   <div class="flex items-center justify-between max-w-screen-xl w-11/12">
@@ -18,9 +18,3 @@ const { current = "" } = Astro.props;
     <Nav current={current} />
   </div>
 </header>
-
-<style is:global>
-  ::view-transition-group(header) {
-    animation: none;
-  }
-</style>

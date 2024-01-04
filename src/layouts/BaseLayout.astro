@@ -19,7 +19,9 @@ const { title, description, permalink, current } = Astro.props;
   </head>
   <body class="dark:bg-zinc-800 transition-colors duration-1000">
     <div class="flex flex-col min-h-screen">
-      <Header current={current} />
+      <div transition:name="Header">
+        <Header current={current} />
+      </div>
 
       <main class="w-full flex-1">
         <slot />
