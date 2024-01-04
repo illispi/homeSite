@@ -11,9 +11,7 @@ const permalink = Astro.site.href;
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
-  <div
-    class="relative w-screen flex justify-center items-center shadow-[inset 0px 0px 98px 4px rgba(0,0,0,0.75) inset 0px 0px 98px 4px rgba(0,0,0,0.75)]"
-  >
+  <div class="relative w-screen flex justify-center items-center">
     <div class="absolute left-0 bg-zinc-800 w-1/2 h-full -z-10 hidden lg:flex">
     </div>
     <div class="absolute left-1/2 bg-white w-1/2 h-full -z-10 hidden lg:flex">
@@ -34,15 +32,15 @@ const permalink = Astro.site.href;
         class="relative h-[600px] overflow-hidden bg-white w-[300px] hidden lg:block"
       >
         <div
-          class="relative bg-zinc-800 -left-[290px] -top-40 w-[400px] h-[800px] rotate-[17deg]"
+          class="relative bg-zinc-800 -left-[250px] -top-40 w-[400px] h-[800px] rotate-[17deg]"
         >
         </div>
       </div>
       <div
-        class="bg-transparent lg:h-[600px] flex justify-center items-center py-8 lg:py-0"
+        class="bg-transparent lg:h-[600px] flex justify-center items-center w-full lg:w-fit py-8 lg:py-0 shadow-[inset_0px_0px_126px_22px_rgba(251,191,36,1)] lg:shadow-none"
       >
         <div
-          class="rounded-full overflow-hidden w-10/12 h-5/6 lg:w-fit lg:h-fit"
+          class="rounded-full overflow-hidden flex-shrink-1 lg:w-fit lg:h-fit"
         >
           <Image
             src={landscape}
