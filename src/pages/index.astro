@@ -11,7 +11,9 @@ const permalink = Astro.site.href;
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
-  <div class="relative w-screen flex justify-center items-center">
+  <div
+    class="relative w-screen flex justify-center items-center shadow-[inset 0px 0px 98px 4px rgba(0,0,0,0.75) inset 0px 0px 98px 4px rgba(0,0,0,0.75)]"
+  >
     <div class="absolute left-0 bg-zinc-800 w-1/2 h-full -z-10 hidden lg:flex">
     </div>
     <div class="absolute left-1/2 bg-white w-1/2 h-full -z-10 hidden lg:flex">
@@ -21,7 +23,7 @@ const permalink = Astro.site.href;
     >
       <div class="flex justify-center items-center flex-col flex-1">
         <h1
-          class="text-center text-9xl font-semibold text-amber-400 bg-zinc-800"
+          class="text-center text-9xl font-semibold text-amber-400 bg-transparent"
         >
           Hello!
         </h1>
@@ -33,7 +35,7 @@ const permalink = Astro.site.href;
         </div>
       </div>
       <div
-        class="bg-white h-[600px] flex justify-center items-center py-16 lg:py-0"
+        class="bg-transparent h-[600px] flex justify-center items-center py-16 lg:py-0"
       >
         <div class="rounded-full overflow-hidden">
           <Image
