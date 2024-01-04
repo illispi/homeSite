@@ -19,21 +19,21 @@ const permalink = Astro.site.href;
     <div
       class="flex items-center justify-center h-full flex-col gap-20 pt-20 lg:py-0 lg:gap-0 lg:flex-row w-full lg:w-11/12 max-w-screen-xl"
     >
-      <div class="flex justify-center items-center flex-col">
+      <div class="flex justify-center items-center flex-col flex-1">
         <h1
           class="text-center text-9xl font-semibold text-amber-400 bg-zinc-800"
         >
           Hello!
         </h1>
       </div>
-      <div class="relative h-[600px] overflow-hidden bg-white">
+      <div class="relative h-[600px] overflow-hidden bg-white w-[300px]">
         <div
           class="relative bg-zinc-800 -left-[290px] -top-40 w-[400px] h-[800px] rotate-[17deg]"
         >
         </div>
       </div>
       <div
-        class="bg-white w-full h-[600px] flex justify-center items-center py-16 lg:py-0"
+        class="bg-white h-[600px] flex justify-center items-center py-16 lg:py-0"
       >
         <div class="rounded-full overflow-hidden">
           <Image
