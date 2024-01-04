@@ -17,12 +17,8 @@ const permalink = Astro.site.href;
     <div class="absolute left-1/2 bg-white w-1/2 h-full -z-10 hidden lg:flex">
     </div>
     <div
-      class="flex items-center justify-around h-full flex-col gap-20 pt-20 lg:py-0 lg:gap-0 lg:flex-row w-full max-w-screen-xl"
+      class="flex items-center justify-center h-full flex-col gap-20 pt-20 lg:py-0 lg:gap-0 lg:flex-row w-full lg:w-11/12 max-w-screen-xl"
     >
-      <!-- <div
-      class="absolute bg-zinc-800 -top-[500px] -left-3/4 w-screen h-[1200px] rotate-[17deg] -z-20"
-      >
-    </div> -->
       <div class="flex justify-center items-center flex-col">
         <h1
           class="text-center text-9xl font-semibold text-amber-400 bg-zinc-800"
@@ -30,9 +26,14 @@ const permalink = Astro.site.href;
           Hello!
         </h1>
       </div>
-      <Image src={middle} alt="divider" height={600} class="hidden lg:flex" />
+      <div class="relative h-[600px] overflow-hidden bg-white">
+        <div
+          class="relative bg-zinc-800 -left-[290px] -top-40 w-[400px] h-[800px] rotate-[17deg]"
+        >
+        </div>
+      </div>
       <div
-        class="bg-white w-full h-full flex justify-center items-center py-16 lg:py-0 grow"
+        class="bg-white w-full h-[600px] flex justify-center items-center py-16 lg:py-0"
       >
         <div class="rounded-full overflow-hidden">
           <Image
