@@ -11,54 +11,54 @@ const permalink = Astro.site.href;
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
-  <div class="relative w-screen flex justify-center items-center">
-    <div class="absolute left-0 bg-zinc-800 w-1/2 h-full -z-10 hidden lg:flex">
+  <div class="relative flex w-screen items-center justify-center">
+    <div class="absolute left-0 -z-10 hidden h-full w-1/2 bg-zinc-800 lg:flex">
     </div>
-    <div class="absolute left-1/2 bg-white w-1/2 h-full -z-10 hidden lg:flex">
+    <div class="absolute left-1/2 -z-10 hidden h-full w-1/2 bg-white lg:flex">
     </div>
     <div
-      class="flex items-center justify-center h-full flex-col lg:flex-row w-full lg:w-11/12 max-w-screen-xl"
+      class="flex h-full w-full max-w-screen-xl flex-col items-center justify-center lg:w-11/12 lg:flex-row"
     >
       <div
-        class="flex justify-center items-center flex-col flex-1 py-8 lg:p-0 w-full bg-zinc-800 lg:bg-transparent"
+        class="flex w-full flex-1 flex-col items-center justify-center bg-zinc-800 py-8 lg:bg-transparent lg:p-0"
       >
         <h1
-          class="text-center text-6xl lg:text-9xl font-semibold text-amber-400 bg-transparent"
+          class="bg-transparent text-center text-6xl font-semibold text-amber-400 lg:text-9xl"
         >
           Hello!
         </h1>
       </div>
       <div
-        class="relative h-[600px] overflow-hidden bg-white w-[300px] hidden lg:block"
+        class="relative hidden h-[500px] w-[300px] overflow-hidden bg-white lg:block"
       >
         <div
-          class="relative bg-zinc-800 -left-[250px] -top-40 w-[400px] h-[800px] rotate-[17deg]"
+          class="relative -left-[250px] -top-40 h-[800px] w-[400px] rotate-[17deg] bg-zinc-800"
         >
         </div>
       </div>
       <div
-        class="bg-white lg:h-[600px] flex justify-center items-center w-full lg:w-fit py-8 lg:py-0 shadow-[inset_0px_0px_126px_22px_rgba(251,191,36,1)] lg:shadow-none"
+        class="flex w-full items-center justify-center bg-white py-8 shadow-[inset_0px_0px_126px_22px_rgba(251,191,36,1)] lg:h-[500px] lg:w-fit lg:py-0 lg:shadow-none"
       >
         <div
-          class="rounded-full overflow-hidden flex-shrink-1 w-11/12 max-w-[500px] lg:w-fit lg:h-fit"
+          class="flex-shrink-1 w-11/12 max-w-[480px] overflow-hidden rounded-full lg:h-fit lg:w-fit"
         >
           <Image
             src={landscape}
             alt="Snowy landscape"
-            height={500}
-            width={500}
+            height={480}
+            width={480}
           />
         </div>
       </div>
     </div>
   </div>
   <div
-    class="w-screen h-20 hidden lg:flex justify-center items-center lg:bg-amber-500"
+    class="hidden h-20 w-screen items-center justify-center lg:flex lg:bg-amber-500"
   >
   </div>
-  <div class="items-center justify-center w-full bg-zinc-800 flex">
+  <div class="flex w-full items-center justify-center bg-zinc-800">
     <h2
-      class="flex-1 text-center text-amber-400 text-6xl font-semibold py-16 block"
+      class="block flex-1 py-16 text-center text-6xl font-semibold text-amber-400"
     >
       Projects:
     </h2>
