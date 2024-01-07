@@ -57,7 +57,7 @@ const socialUrl = Astro.site.href + "assets/social.png";
   document.addEventListener("astro:after-swap", () => {
     localStorage.theme === "dark"
       ? document.documentElement.classList.add("dark")
-      : document.documentElement.classList.add("light");
+      : null;
 
     console.log(localStorage.theme);
   });
