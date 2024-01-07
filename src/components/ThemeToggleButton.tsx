@@ -31,9 +31,17 @@ const ThemeToggleButton: Component<{}> = (props) => {
 
   createEffect(() => {
     if (rootEl && theme() === "light") {
+      document.body.classList.add("colorTransition");
       rootEl.classList.remove("dark");
+      setTimeout(() => {
+        document.body.classList.remove("colorTransition");
+      }, 1000);
     } else if (rootEl && theme() === "dark") {
+      document.body.classList.add("colorTransition");
       rootEl.classList.add("dark");
+      setTimeout(() => {
+        document.body.classList.remove("colorTransition");
+      }, 1000);
     }
   });
 

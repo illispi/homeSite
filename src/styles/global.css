@@ -30,3 +30,7 @@
   animation: none;
   mix-blend-mode: normal;
 }
+
+.colorTransition {
+  transition: all 1s ease-in-out;
+}
