@@ -12,9 +12,9 @@ export default defineConfig({
   integrations: [mdx(), solid(), tailwind()],
   output: "static",
   markdown: {
-    shikiConfig: {
-      theme: "nord",
-    },
+    // shikiConfig: {
+    //   theme: "nord",
+    // },
     remarkPlugins: [remarkGfm, remarkSmartypants],
     rehypePlugins: [
       [

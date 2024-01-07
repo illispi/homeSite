@@ -29,7 +29,9 @@ const permalink = `${Astro.site.href}blog/${slug}`;
     <hr />
   </header>
   <div class="flex w-full flex-col items-center justify-start">
-    <article class="flex max-w-screen-xl flex-col items-center justify-start">
+    <article
+      class="flex w-11/12 max-w-screen-xl flex-auto flex-col items-center justify-start overflow-x-auto"
+    >
       <Content />
     </article>
     <hr />
@@ -37,8 +39,21 @@ const permalink = `${Astro.site.href}blog/${slug}`;
   </div>
 </BaseLayout>
 
-<style>
-  h2 {
-    @apply font-bold;
+<style is:global>
+  @tailwind base;
+
+  @layer base {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply text-xl font-bold;
+    }
+
+    p {
+      @apply my-12;
+    }
   }
 </style>
