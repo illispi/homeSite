@@ -49,11 +49,13 @@ const permalink = `${Astro.site.href}blog/${slug}`;
     h4,
     h5,
     h6 {
-      @apply text-xl font-bold;
+      @apply text-2xl font-bold;
     }
 
     p {
-      @apply my-12;
+      @apply my-12 max-w-screen-md text-lg;
     }
   }
 </style>
+
+<!-- BUG going to blogpage adjusts header -->
