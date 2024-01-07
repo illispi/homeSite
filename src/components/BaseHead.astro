@@ -47,7 +47,6 @@ const socialUrl = Astro.site.href + "assets/social.png";
     theme === "dark" ||
     (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
   ) {
-    console.log("removed", root, theme);
     root.classList.add("dark");
   } else {
     root.classList.remove("dark");
@@ -59,5 +58,7 @@ const socialUrl = Astro.site.href + "assets/social.png";
     localStorage.theme === "dark"
       ? document.documentElement.classList.add("dark")
       : document.documentElement.classList.add("light");
+
+    console.log(localStorage.theme);
   });
 </script>

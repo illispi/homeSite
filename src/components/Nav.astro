@@ -3,12 +3,12 @@ import ThemeToggleButton from "./ThemeToggleButton.tsx";
 const { current = "" } = Astro.props;
 ---
 
-<nav class="flex justify-center items-center gap-12">
+<nav class="flex items-center justify-center gap-12">
   <div>
     <ThemeToggleButton client:load />
   </div>
-  <a class="text-black font-semibold text-xl" href="/">home</a>
-  <a class="text-black font-semibold text-xl" href="/blog">blog</a>
+  <a class="text-xl font-semibold text-black" href="/">home</a>
+  <a class="text-xl font-semibold text-black" href="/blog">blog</a>
 </nav>
 
 <!-- TODO see what that current was for css in original -->
