@@ -7,10 +7,10 @@ const { current = "" } = Astro.props;
 ---
 
 <header
-  transition:name="Header"
-  class="flex justify-around w-screen py-2 bg-gradient-to-t to-amber-400 from-amber-500 sticky top-0 z-50"
+  transition:name="header"
+  class="sticky top-0 z-50 flex w-screen justify-around bg-gradient-to-t from-amber-500 to-amber-400 py-2"
 >
-  <div class="flex items-center justify-between max-w-screen-xl w-11/12">
+  <div class="flex w-11/12 max-w-screen-xl items-center justify-between">
     <a href="/">
       <Image src={blogLogo} alt="Logo" width={50} />
     </a>
