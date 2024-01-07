@@ -9,7 +9,7 @@ const { current = "" } = Astro.props;
 <header
   transition:persist="header"
   transition:name="header"
-  class="sticky top-0 z-50 flex w-screen justify-around bg-gradient-to-t from-amber-500 to-amber-400 py-2"
+  class="sticky top-0 z-50 flex w-full justify-around bg-gradient-to-t from-amber-500 to-amber-400 py-2"
 >
   <div class="flex w-11/12 max-w-screen-xl items-center justify-between">
     <a href="/">
@@ -19,4 +19,3 @@ const { current = "" } = Astro.props;
     <Nav current={current} />
   </div>
 </header>
-

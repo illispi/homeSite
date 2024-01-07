@@ -21,10 +21,8 @@ const { title, description, permalink, current } = Astro.props;
     <div class="flex min-h-screen flex-col">
       <Header current={current} />
 
-      <main class="w-full flex-1">
-        <slot />
-        <Footer />
-      </main>
+      <slot />
+      <Footer />
     </div>
   </body>
 </html>
