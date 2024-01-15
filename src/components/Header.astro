@@ -2,6 +2,7 @@
 import Nav from "./Nav.astro";
 import { Image } from "astro:assets";
 import blogLogo from "../images/blogLogo.png";
+import Picture from "astro/components/Picture.astro";
 
 const { current = "" } = Astro.props;
 ---
@@ -13,7 +14,12 @@ const { current = "" } = Astro.props;
 >
   <div class="flex w-11/12 max-w-screen-xl items-center justify-between">
     <a href="/">
-      <Image src={blogLogo} alt="Logo" width={50} />
+      <Picture
+        src={blogLogo}
+        alt="Logo"
+        formats={["avif", "webp"]}
+        width={50}
+      />
     </a>
 
     <Nav current={current} />
