@@ -13,7 +13,7 @@ const ThemeToggleButton: Component<{}> = (props) => {
   const themes = ["light", "dark"];
 
   const test = () => {
-    if (rootEl?.classList.contains("theme-dark")) {
+    if (rootEl?.classList.contains("dark")) {
       return "dark";
     } else if (
       typeof localStorage !== "undefined" &&
@@ -31,14 +31,22 @@ const ThemeToggleButton: Component<{}> = (props) => {
 
   createEffect(() => {
     if (rootEl && theme() === "light") {
-      rootEl.classList.remove("theme-dark");
+      document.body.classList.add("colorTransition");
+      rootEl.classList.remove("dark");
+      setTimeout(() => {
+        document.body.classList.remove("colorTransition");
+      }, 1000);
     } else if (rootEl && theme() === "dark") {
-      rootEl.classList.add("theme-dark");
+      document.body.classList.add("colorTransition");
+      rootEl.classList.add("dark");
+      setTimeout(() => {
+        document.body.classList.remove("colorTransition");
+      }, 1000);
     }
   });
 
   return (
-    <div class="theme-toggle">
+    <div class="flex items-center justify-center">
       <Show
         when={theme() === "dark"}
         fallback={
@@ -49,11 +57,11 @@ const ThemeToggleButton: Component<{}> = (props) => {
             }}
           >
             <svg
+              class="fill-black"
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
               viewBox="0 0 20 20"
-              fill="currentColor"
             >
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
             </svg>
@@ -67,11 +75,11 @@ const ThemeToggleButton: Component<{}> = (props) => {
           }}
         >
           <svg
+            class="fill-black"
             xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
             viewBox="0 0 20 20"
-            fill="currentColor"
           >
             <path
               fill-rule="evenodd"

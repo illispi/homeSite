@@ -21,8 +21,6 @@ This page is an adapted version of [markdown-test-page](https://github.com/fullp
 
 ---
 
-# <a name="Headings"></a>Headings
-
 # Heading one
 
 Sint sit cillum pariatur eiusmod nulla pariatur ipsum. Sit laborum anim qui mollit tempor pariatur nisi minim dolor. Aliquip et adipisicing sit sit fugiat commodo id sunt. Nostrud enim ad commodo incididunt cupidatat in ullamco ullamco Lorem cupidatat velit enim et Lorem. Ut laborum cillum laboris fugiat culpa sint irure do reprehenderit culpa occaecat. Exercitation esse mollit tempor magna aliqua in occaecat aliquip veniam reprehenderit nisi dolor in laboris dolore velit.
@@ -150,13 +148,13 @@ Et fugiat ad nisi amet magna labore do cillum fugiat occaecat cillum Lorem proid
       alt="Woman paying for a purchase"
     />
   </div>
-  <div class="mt-4 md:mt-0 md:ml-6">
-    <div class="uppercase tracking-wide text-sm text-indigo-600 font-bold">
+  <div class="mt-4 md:ml-6 md:mt-0">
+    <div class="text-sm font-bold uppercase tracking-wide text-indigo-600">
       Marketing
     </div>
     <a
       href="#"
-      class="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline"
+      class="mt-1 block text-lg font-semibold leading-tight text-gray-900 hover:underline"
       >Finding customers for your new business</a
     >
     <p class="mt-2 text-gray-600">

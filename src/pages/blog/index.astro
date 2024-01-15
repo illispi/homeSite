@@ -9,7 +9,7 @@ let allPosts = await Astro.glob("../../data/blog-posts/*.md");
 allPosts = allPosts.sort(
   (a, b) =>
     new Date(b.frontmatter.publishDate).valueOf() -
-    new Date(a.frontmatter.publishDate).valueOf()
+    new Date(a.frontmatter.publishDate).valueOf(),
 );
 ---
 
@@ -19,48 +19,55 @@ allPosts = allPosts.sort(
   permalink={permalink}
   current="blog"
 >
-  <div class="container">
-    <h1>Blog</h1>
-    {
-      allPosts.map((post, index) => {
-        const href = `/blog/${post.file.split("/").pop().split(".").shift()}`;
-        return (
-          <div>
-            {index !== 0 && <hr />}
-            <div class="post-item">
-              <h2>
-                <a href={href}>{post.frontmatter.title}</a>
-              </h2>
-              <p>{post.frontmatter.description}</p>
-              <div class="post-item-footer">
-                <span class="post-item-date">
-                  — {post.frontmatter.publishDate}
-                </span>
+  <div class="flex min-h-screen w-full flex-col items-center justify-start">
+    <h1 class="my-12 text-4xl">Blog</h1>
+    <div
+      class="flex w-11/12 max-w-screen-md flex-auto flex-col items-start justify-start gap-6 overflow-x-auto"
+    >
+      {
+        allPosts.map((post, index) => {
+          const href = `/blog/${post.file.split("/").pop().split(".").shift()}`;
+          return (
+            <div>
+              {index !== 0 && <hr />}
+              <div class="post-item">
+                <h2>
+                  <a href={href}>{post.frontmatter.title}</a>
+                </h2>
+                <p>{post.frontmatter.description}</p>
+                <div class="post-item-footer">
+                  <span class="post-item-date">
+                    — {post.frontmatter.publishDate}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })
-    }
+          );
+        })
+      }
+    </div>
   </div>
+
+  <style is:global>
+    @tailwind base;
+
+    @layer base {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        @apply text-3xl font-bold dark:text-white;
+      }
+
+      p {
+        @apply my-12 text-lg dark:text-white;
+      }
+
+      span {
+        @apply my-12 text-lg dark:text-white;
+      }
+    }
+  </style>
 </BaseLayout>
-
-<style>
-  h2,
-  .post-item-footer {
-    font-family: var(--font-family-sans);
-    font-weight: 700;
-  }
-
-  .post-item-date {
-    color: var(--text-secondary);
-    text-align: left;
-    text-transform: uppercase;
-    margin-right: 16px;
-    transition: color 1s ease-in-out;
-  }
-
-  hr {
-    margin: 60px auto;
-  }
-</style>

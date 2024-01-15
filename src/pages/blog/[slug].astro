@@ -1,12 +1,12 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Bio from '../../components/Bio.astro';
-import getPostData from '../../utils/getPostData';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Bio from "../../components/Bio.astro";
+import getPostData from "../../utils/getPostData";
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../../data/blog-posts/*.md');
-  return posts.map(p => ({
-    params: { slug: p.file.split('/').pop().split('.').shift() },
+  const posts = await Astro.glob("../../data/blog-posts/*.md");
+  return posts.map((p) => ({
+    params: { slug: p.file.split("/").pop().split(".").shift() },
     props: { post: p },
   }));
 }
@@ -17,39 +17,55 @@ const { slug, readingTime } = getPostData(Astro.props.post);
 const permalink = `${Astro.site.href}blog/${slug}`;
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink} current="blog">
+<BaseLayout
+  title={title}
+  description={description}
+  permalink={permalink}
+  current="blog"
+>
   <header>
     <p>{publishDate} ~ {readingTime}</p>
     <h1>{title}</h1>
-    <hr />
   </header>
-  <div class="container">
-    <article class="content">
+  <div class="flex w-full flex-col items-center justify-start">
+    <article
+      class="flex w-11/12 max-w-screen-md flex-auto flex-col items-center justify-start gap-4 overflow-x-auto"
+    >
       <Content />
     </article>
-    <hr />
-    <Bio />
   </div>
 </BaseLayout>
 
-<style>
-  header {
-    text-align: center;
-  }
+<style is:global>
+  @tailwind base;
 
-  header h1 {
-    margin-bottom: 0.7em;
-  }
+  @layer base {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply text-3xl font-bold dark:text-white;
+    }
+    li {
+      @apply my-4 text-xl font-semibold dark:text-white;
+    }
 
-  header p {
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    font-family: var(--font-family-sans);
-    font-weight: 600;
-  }
+    p {
+      @apply my-12 text-lg dark:text-white;
+    }
 
-  header hr {
-    min-width: 100px;
-    width: 30%;
+    header p {
+      @apply mx-auto text-center font-semibold;
+    }
+    header h1 {
+      @apply mx-auto text-center text-6xl;
+    }
+
+    pre {
+      @apply w-full overflow-x-auto rounded-lg p-4;
+    }
   }
 </style>
+
