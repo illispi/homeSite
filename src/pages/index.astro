@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import { Image } from "astro:assets";
 import landscape from "../images/landscape.jpg";
+import storiesIcon from "../images/storiesIcon.png";
 
 const title = "My Astro Blog";
 const description = "The perfect starter for your perfect blog.";
@@ -61,5 +62,24 @@ const permalink = Astro.site.href;
     >
       Projects:
     </h2>
+  </div>
+  <div class="my-24 flex w-full flex-col items-center justify-start">
+    <div class="flex w-11/12 flex-col items-center justify-center">
+      <a
+        class="transition-all hover:scale-110"
+        href="https://stories.delvis.org"
+      >
+        <Image
+          class="rounded-2xl"
+          src={storiesIcon}
+          alt="Stories icon"
+          height={700}
+          width={700}
+        />
+        <p class="p-4 text-xl dark:text-white">
+          Website made with solidJs. Includes poll and shared articles.
+        </p>
+      </a>
+    </div>
   </div>
 </BaseLayout>
