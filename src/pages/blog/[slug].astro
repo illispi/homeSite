@@ -26,16 +26,13 @@ const permalink = `${Astro.site.href}blog/${slug}`;
   <header>
     <p>{publishDate} ~ {readingTime}</p>
     <h1>{title}</h1>
-    <hr />
   </header>
   <div class="flex w-full flex-col items-center justify-start">
     <article
-      class="flex w-11/12 max-w-screen-xl flex-auto flex-col items-center justify-start overflow-x-auto"
+      class="flex w-11/12 max-w-screen-md flex-auto flex-col items-center justify-start gap-4 overflow-x-auto"
     >
       <Content />
     </article>
-    <hr />
-    <Bio />
   </div>
 </BaseLayout>
 
@@ -49,11 +46,25 @@ const permalink = `${Astro.site.href}blog/${slug}`;
     h4,
     h5,
     h6 {
-      @apply text-2xl font-bold;
+      @apply text-3xl font-bold dark:text-white;
+    }
+    li {
+      @apply my-4 text-xl font-semibold dark:text-white;
     }
 
     p {
-      @apply my-12 max-w-screen-md text-lg;
+      @apply my-12 text-lg dark:text-white;
+    }
+
+    header p {
+      @apply mx-auto text-center font-semibold;
+    }
+    header h1 {
+      @apply mx-auto text-center text-6xl;
+    }
+
+    pre {
+      @apply w-full overflow-x-auto;
     }
   }
 </style>
