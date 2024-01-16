@@ -44,7 +44,7 @@ const permalink = Astro.site.href;
           src={landscape}
           alt="Snowy landscape"
           formats={["avif", "webp"]}
-          class="w-full max-w-lg rounded-full p-4"
+          class="w-full max-w-lg rounded-full xl:p-4"
         />
       </div>
     </div>
@@ -63,18 +63,18 @@ const permalink = Astro.site.href;
   <div class="my-24 flex w-full flex-col items-center justify-start">
     <div class="flex w-11/12 flex-col items-center justify-center">
       <a
-        class="transition-all hover:scale-110"
+        class="overflow-hidden rounded-3xl shadow-2xl shadow-zinc-800 transition-all hover:scale-110 dark:shadow-zinc-400"
         href="https://stories.delvis.org"
       >
         <Picture
-          class="w-full max-w-screen-lg rounded-2xl"
+          class="w-full max-w-screen-lg"
           src={storiesIcon}
           alt="Stories icon"
           formats={["avif", "webp"]}
           widths={[240, 540, 720, storiesIcon.width]}
           sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${storiesIcon.width}px`}
         />
-        <p class="p-4 text-center text-xl dark:text-white">
+        <p class="p-4 py-16 text-center text-xl dark:text-white">
           Website made with solidJS. Includes poll and shared articles.
         </p>
       </a>
