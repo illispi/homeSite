@@ -49,25 +49,21 @@ allPosts = allPosts.sort(
   </div>
 
   <style is:global>
-    @tailwind base;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply text-3xl font-bold dark:text-white;
+    }
 
-    @layer base {
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        @apply text-3xl font-bold dark:text-white;
-      }
+    p {
+      @apply my-12 text-lg dark:text-white;
+    }
 
-      p {
-        @apply my-12 text-lg dark:text-white;
-      }
-
-      span {
-        @apply my-12 text-lg dark:text-white;
-      }
+    span {
+      @apply my-12 text-lg dark:text-white;
     }
   </style>
 </BaseLayout>
