@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Bio from "../../components/Bio.astro";
 import getPostData from "../../utils/getPostData";
 
 export async function getStaticPaths() {
@@ -52,8 +51,8 @@ const permalink = `${Astro.site.href}blog/${slug}`;
       @apply my-4 text-xl font-semibold dark:text-white;
     }
 
-    p {
-      @apply my-12 text-lg dark:text-white;
+    article p {
+      @apply my-12 text-base lg:text-lg dark:text-white;
     }
 
     header p {
@@ -68,4 +67,3 @@ const permalink = `${Astro.site.href}blog/${slug}`;
     }
   }
 </style>
-
