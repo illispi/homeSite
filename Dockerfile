@@ -1,10 +1,10 @@
-FROM node:20-alpine AS build
+FROM oven/bun:1 AS build
 WORKDIR /app
 COPY . .
-RUN npm i --force
-RUN npm run prod
+RUN bun install
+RUN bun run prod
 
-FROM node:20-alpine as static
+FROM oven/bun:1 as static
 COPY --from=build /app/dist /container
 COPY --from=build /app/entrypoint.sh ./entrypoint.sh
 

@@ -2,14 +2,15 @@
   "name": "delvis.org",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev --host",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "prod": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "bunx --bun astro dev --host",
+    "start": "bunx --bun astro dev",
+    "build": "bunx --bun astro check && bunx --bun astro build",
+    "prod": "bunx --bun astro build",
+    "preview": "bunx --bun astro preview",
+    "astro": "bunx --bun astro"
   },
   "devDependencies": {
+    "@types/bun": "^1.1.1",
     "@typescript-eslint/parser": "^7.8.0",
     "eslint": "^9.2.0",
     "eslint-plugin-solid": "^0.14.0",
