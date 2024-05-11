@@ -6,8 +6,8 @@ import landscape from "../images/landscape.jpg";
 import storiesIcon from "../images/storiesIcon.png";
 import Picture from "astro/components/Picture.astro";
 
-const title = "My Astro Blog";
-const description = "The perfect starter for your perfect blog.";
+const title = "Delvis.org";
+const description = "My very own home site";
 const permalink = Astro.site.href;
 ---
 
@@ -38,13 +38,16 @@ const permalink = Astro.site.href;
         </div>
       </div>
       <div
-        class="flex w-full flex-1 items-center justify-center bg-white py-8 shadow-[inset_0px_0px_126px_22px_rgba(251,191,36,1)] lg:h-[500px] lg:py-0 lg:shadow-none"
+        class="flex w-full flex-1 items-center justify-center bg-white py-4 shadow-[inset_0px_0px_126px_22px_rgba(251,191,36,1)] lg:h-[500px] lg:py-0 lg:shadow-none"
       >
         <Picture
           src={landscape}
           alt="Snowy landscape"
-          formats={["avif", "webp"]}
-          class="w-full max-w-lg rounded-full xl:p-4"
+          formats={["avif"]}
+          class="w-11/12 lg:w-full max-w-lg rounded-full xl:p-4 m-auto"
+          widths={[240, 540, 720, landscape.width]}
+          sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${landscape.width}px`}
+          
         />
       </div>
     </div>
@@ -67,10 +70,11 @@ const permalink = Astro.site.href;
         href="https://stories.delvis.org"
       >
         <Picture
-          class="w-full max-w-screen-lg"
+          class="w-full max-w-screen-md"
           src={storiesIcon}
           alt="Stories icon"
           formats={["avif", "webp"]}
+        
           widths={[240, 540, 720, storiesIcon.width]}
           sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${storiesIcon.width}px`}
         />

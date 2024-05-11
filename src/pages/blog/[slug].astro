@@ -22,13 +22,13 @@ const permalink = `${Astro.site.href}blog/${slug}`;
   permalink={permalink}
   current="blog"
 >
-  <header class="mt-12">
-    <p>{publishDate} ~ {readingTime}</p>
-    <h1>{title}</h1>
+  <header class="my-6 md:my-12">
+    <p class="mx-auto text-center font-semibold dark:text-white">{publishDate} ~ {readingTime}</p>
+    <h1 class="mx-auto text-center text-4xl md:text-6xl">{title}</h1>
   </header>
   <div class="flex w-full flex-col items-center justify-start">
     <article
-      class="flex w-11/12 max-w-screen-md flex-auto flex-col items-center justify-start gap-4 overflow-x-auto"
+      class="flex max-w-screen-md flex-auto flex-col items-center justify-start overflow-x-auto"
     >
       <Content />
     </article>
@@ -45,24 +45,25 @@ const permalink = `${Astro.site.href}blog/${slug}`;
   h4,
   h5,
   h6 {
-    @apply text-3xl font-bold dark:text-white;
+    @apply text-3xl font-bold dark:text-white w-11/12;
   }
   li {
     @apply my-4 text-xl font-semibold dark:text-white;
   }
 
   article p {
-    @apply my-12 text-base lg:text-lg dark:text-white;
+    @apply mb-6 text-left w-11/12 text-base lg:text-lg dark:text-white;
   }
-
-  header p {
-    @apply mx-auto text-center font-semibold;
-  }
-  header h1 {
-    @apply mx-auto text-center text-6xl;
-  }
-
   pre {
     @apply w-full overflow-x-auto rounded-lg p-4;
   }
+  article img {
+    @apply relative w-screen left-[calc(-50vw_+_50%)] max-w-screen-md lg:left-0 lg:w-full
+  }
+
+  article a {
+    @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600
+  }
+
+
 </style>
