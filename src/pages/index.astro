@@ -69,15 +69,17 @@ const permalink = Astro.site.href;
         class="overflow-hidden rounded-3xl shadow-2xl shadow-zinc-800 transition-all hover:scale-105 dark:shadow-zinc-400"
         href="https://stories.delvis.org"
       >
+       
+        <div  class="w-full max-w-screen-md">
+
         <Picture
-          class="w-full max-w-screen-md"
-          src={storiesIcon}
-          alt="Stories icon"
-          formats={["avif", "webp"]}
-        
-          widths={[240, 540, 720, storiesIcon.width]}
-          sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${storiesIcon.width}px`}
+        src={storiesIcon}
+        alt="Stories icon"
+        formats={["avif", "webp"]}
+        widths={[240, 540, 720, storiesIcon.width]}
+        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${storiesIcon.width}px`}
         />
+      </div>
         <p class="p-4 py-16 text-center text-xl dark:text-white">
           Website made with solidJS. Includes poll and shared articles.
         </p>

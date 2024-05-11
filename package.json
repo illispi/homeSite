@@ -6,7 +6,7 @@
     "start": "bunx --bun astro dev",
     "build": "bunx --bun astro check && bunx --bun astro build",
     "prod": "bunx --bun astro build",
-    "preview": "bunx --bun astro preview",
+    "preview": "bunx --bun astro preview --host",
     "astro": "bunx --bun astro"
   },
   "devDependencies": {
