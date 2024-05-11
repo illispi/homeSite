@@ -4,3 +4,7 @@ Add blog link projects
 
 text transition all on theme change
 
+What is that css cls problem
+
+does astro image even work?
+
