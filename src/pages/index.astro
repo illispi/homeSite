@@ -4,6 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import landscape from "../images/landscape.jpg";
 import storiesIcon from "../images/storiesIcon.png";
+import seintrackIcon from "../images/seintrack.png";
 import Picture from "astro/components/Picture.astro";
 
 const title = "Delvis.org";
@@ -63,26 +64,56 @@ const permalink = Astro.site.href;
       Projects:
     </h2>
   </div>
-  <div class="my-12 flex w-full flex-col items-center justify-start">
-    <div class="flex w-11/12 flex-col items-center justify-center">
+  <div class="my-12 flex w-full flex-col items-center justify-start  xl:grid xl:grid-cols-2 xl:max-w-screen-2xl xl:mx-auto justify-items-center place-content-stretch gap-16">
+    <div class="flex w-11/12 max-w-3xl flex-col items-center justify-center">
       <a
         class="overflow-hidden rounded-3xl shadow-2xl shadow-zinc-800 transition-all hover:scale-105 dark:shadow-zinc-400"
-        href="https://stories.delvis.org"
+        href="https://poll.delvis.org"
       >
        
-        <div  class="w-full max-w-screen-md">
+        <div  class="size-full max-w-screen-md max-h-96">
 
         <Picture
         src={storiesIcon}
         alt="Stories icon"
-        formats={["avif", "webp"]}
+		class="size-full object-cover h-96"
+        formats={["avif"]}
         widths={[240, 540, 720, storiesIcon.width]}
         sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${storiesIcon.width}px`}
         />
       </div>
-        <p class="p-4 py-16 text-center text-xl dark:text-white">
-          Website made with solidJS. Includes poll and shared articles.
+	  <div class="flex justify-center items-center h-32 px-8">
+
+		  <p class="text-center text-xl dark:text-white">
+			  Website made with solidJS. Includes poll and shared articles.
+			</p>
+		</div>
+      </a>
+    </div>
+    <div class="flex w-11/12 max-w-3xl flex-col items-center justify-center">
+      <a
+        class="overflow-hidden rounded-3xl shadow-2xl shadow-zinc-800 transition-all hover:scale-105 dark:shadow-zinc-400"
+        href="https://demoseintrack.delvis.org"
+      >
+       
+        <div class="size-full max-w-screen-md max-h-96 overflow-hidden">
+
+        <Picture
+        
+        src={seintrackIcon}
+        alt="Stories icon"
+        formats={["avif"]}
+        
+		class="size-full object-cover h-96"
+        widths={[240, 540, 720, seintrackIcon.width]}
+        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${seintrackIcon.width}px`}
+        />
+      </div>
+	  <div class="flex justify-center items-center h-32 px-8">
+        <p class="text-center text-xl dark:text-white">
+          Made for Solid hack 2024. Seinfeld calendar and time tracking hybrid.
         </p>
+	  </div>
       </a>
     </div>
   </div>

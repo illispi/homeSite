@@ -1,37 +1,38 @@
 {
-  "name": "delvis.org",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "bunx --bun astro dev --host",
-    "start": "bunx --bun astro dev",
-    "build": "bunx --bun astro check && bunx --bun astro build",
-    "prod": "bunx --bun astro build",
-    "preview": "bunx --bun astro preview --host",
-    "astro": "bunx --bun astro"
-  },
-  "devDependencies": {
-    "@types/bun": "^1.1.1",
-    "@typescript-eslint/parser": "^7.8.0",
-    "eslint": "^9.2.0",
-    "eslint-plugin-solid": "^0.14.0",
-    "eslint-plugin-tailwindcss": "^3.15.1",
-    "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-tailwindcss": "^0.5.14"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.6.0",
-    "@astrojs/mdx": "^3.0.0",
-    "@astrojs/solid-js": "^4.2.0",
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.8.2",
-    "reading-time": "^1.5.0",
-    "rehype-external-links": "^3.0.0",
-    "remark-gfm": "^4.0.0",
-    "remark-smartypants": "^3.0.1",
-    "sharp": "^0.33.3",
-    "solid-js": "^1.8.17",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5"
-  }
+	"name": "delvis.org",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev --host",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"prod": "astro build",
+		"preview": "astro preview --host",
+		"astro": "astro"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/bun": "^1.1.13",
+		"@typescript-eslint/parser": "^8.14.0",
+		"eslint": "^9.15.0",
+		"eslint-plugin-solid": "^0.14.4",
+		"eslint-plugin-tailwindcss": "^3.17.5",
+		"prettier": "^3.3.3",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-tailwindcss": "^0.6.8"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.9.4",
+		"@astrojs/mdx": "^3.1.9",
+		"@astrojs/solid-js": "^4.4.3",
+		"@astrojs/tailwind": "^5.1.2",
+		"astro": "^4.16.13",
+		"reading-time": "^1.5.0",
+		"rehype-external-links": "^3.0.0",
+		"remark-gfm": "^4.0.0",
+		"remark-smartypants": "^3.0.2",
+		"sharp": "^0.33.5",
+		"solid-js": "^1.9.3",
+		"tailwindcss": "^3.4.15",
+		"typescript": "^5.6.3"
+	}
 }
