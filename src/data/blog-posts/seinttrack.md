@@ -10,13 +10,14 @@ description: post mortem
 
 Link to project demo: [SeinTrack](https://demoseintrack.delvis.org/)
 
-Point of the project SeinTrack is that you can set how many hours you want to work on whatever project you have, and try to be consistent with it by setting target hours for a day and logging them in them into the app and build a streak. Its intended to be self-hosted behind auth proxy.
+The purpose of SeinTrack is to help you allocate a set number of hours to work on your projects consistently. You can define daily target hours, log them in the app, and build a streak to stay on track. The app is designed to be self-hosted behind an authentication proxy.
 
-It is built as a submission for Solid hack 2024 and voting is ongoing right now.
+SeinTrack was developed as a submission for Solid Hack 2024, and voting is currently ongoing.
 
-## Features
+Features
+One feature I’m particularly proud of is enabling menu closure using the back navigation gesture on mobile devices. Most websites don’t handle this; instead, users are required to close menus by clicking an "X" or tapping outside the menu. Typically, a back gesture just navigates to the previous page. By implementing this feature, I made the app feel more like a native mobile application.
 
-One of the nice things I implemented with this project is closing menus with back navigate gesture on mobile. Usually web sites don't handle this and you have to close menus by clicking X or away from menu area. Doing back gesture just takes you you to previous page typically. Enabling back gesture just makes it feel more like a native app. My implementation is done with just simple search params like this:
+The implementation is straightforward and relies on search parameters, as shown below:
 
 ```js
 const BackNav: ParentComponent<{ setOpen: Setter<boolean>; open: boolean }> = (
@@ -56,18 +57,15 @@ const BackNav: ParentComponent<{ setOpen: Setter<boolean>; open: boolean }> = (
 
 export default BackNav;
 ```
+While it’s not perfect—it uses .length instead of counting uniqueIds for deeper menus—it works well enough for this simple app.
 
-Its not perfect since it uses .length and not counting uniqueId:s for deeper menus, but for my simple app it was fine.
+Overall, the project was relatively straightforward to program. The only slightly tricky part was implementing the custom calendar, which required some effort. Most of my bugs were related to 0 evaluating as falsy. I’d hoped to catch on to this quickly, but it tripped me up several times.
 
-Whole project was fairly simple to program, only slighly tricky part was the main calendar, since it's custom implementation.
-
-Lot of my bugs were related to 0 evaluating as falsy. You would think I would have learned from it quickly, but it tripped me quite often.
-
-I should have probably done proper tag system and not the current tag and tag group system, but I realized this too late, so it will have to be done after project
+In hindsight, I should have implemented a proper tagging system rather than the current tag-and-tag-group setup. Unfortunately, I realized this too late, so it’ll have to wait for a future update.
 
 ## Solidjs thoughts
 
-I had already done other project in Solid start, so I was quite familiar with it on basics level. One of the best things is that is easy to work with vanilla js libraries. But here are some minor annoyances I had with solid start.
+Having already worked on another project using Solid Start, I was fairly familiar with its basics. One of SolidJS’s best aspects is how easily it integrates with vanilla JavaScript libraries. However, I did encounter a few minor annoyances:
 
 #### Show type narrowing
 
@@ -77,19 +75,21 @@ I had already done other project in Solid start, so I was quite familiar with it
 </Show>
 ```
 
-Above type narrowing doesnt work for typescript, so you always have to use ! assertion, which kind of error prone. There is a callback version of `<Show>`, but I dont like renaming solidQueryA.data to data for no reason, and in this example it doesnt even work since there is AND condition in when. I also kind of wish you could do `<For>` component as well without renaming variable and just use index inside callback.
+In the above example, type narrowing doesn’t work with TypeScript, so you always have to use the ! assertion, which is error-prone. While there’s a callback version of <Show>, I dislike renaming solidQueryA.data to something generic like data unnecessarily. Additionally, in this example, the callback version doesn’t work due to the AND condition in the when prop.
+
+Similarly, I wish <For> components allowed using indices directly inside the callback without requiring variable renaming.
 
 #### Other issues
-
-I couldnt get trpc errors not crash the server for some reason, it didnt happen on my previous project at some point but on latest dependencies, it happens, so I had to disable SSR. For some reason vinxi doesnt seem to load .env in production, so I had to use this workaround 
+tRPC Errors: For some reason, I couldn’t prevent tRPC errors from crashing the server. This issue didn’t occur in my previous project, but with the latest dependencies, it surfaced. To work around this, I had to disable SSR.
+Environment Variables: Vinxi didn’t load .env files in production, so I resorted to this workaround:
 ```js
 "start": "node --env-file=.env .output/server/index.mjs",
 ```
-On programming side I couldnt figure out how to work with useTransition for calendar animation, so I just switch to new data after exit animation, instead of starting to load new async data immediately after exit animation starts. I couldnt figure out how to initialize signal with async data either.
-
-
+Animations & Transitions: I couldn’t figure out how to use useTransition effectively for calendar animations. As a result, I switched to loading new data only after the exit animation completes, instead of starting it during the animation.
+Signals with Async Data: I struggled to initialize a signal with asynchronous data.
 ## Conclusion
+Participating in Solid Hack 2024 was a fun experience. It’s a great way to introduce new users to SolidJS, and the ecosystem benefited from some excellent contributions through the challenges.
 
-I think it was pretty fun to participate in this hack, and I think its good way to get new users to try solidjs and ecosystem got some good contributions from challenges.
+
 
 
