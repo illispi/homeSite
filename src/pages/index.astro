@@ -45,7 +45,7 @@ const permalink = Astro.site.href;
           src={landscape}
           alt="Snowy landscape"
           formats={["avif"]}
-          class="w-11/12 lg:w-full max-w-lg rounded-full xl:p-4 m-auto"
+          class="w-11/12 lg:w-full max-w-lg rounded-full xl:p-4 m-auto aspect-auto"
           widths={[240, 540, 720, landscape.width]}
           sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${landscape.width}px`}
           
@@ -76,7 +76,7 @@ const permalink = Astro.site.href;
         <Picture
         src={storiesIcon}
         alt="Stories icon"
-		class="size-full object-cover h-96"
+		class="size-full object-cover max-h-96 aspect-[2/1]"
         formats={["avif"]}
         widths={[240, 540, 720, storiesIcon.width]}
         sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${storiesIcon.width}px`}
@@ -103,8 +103,10 @@ const permalink = Astro.site.href;
         src={seintrackIcon}
         alt="Stories icon"
         formats={["avif"]}
+
+		
         
-		class="size-full object-cover h-96"
+		class="size-full object-cover max-h-96 aspect-[2/1]"
         widths={[240, 540, 720, seintrackIcon.width]}
         sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${seintrackIcon.width}px`}
         />
