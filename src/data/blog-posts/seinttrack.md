@@ -10,7 +10,7 @@ description: post mortem
 
 Link to project demo: [SeinTrack](https://demoseintrack.delvis.org/)
 
-Point of the project SeinTrack is that you can set how many hours you want to work on whatever project you have, and try to be consistent with it by setting target hours for a day and logging them in them into the app and build a streak.
+Point of the project SeinTrack is that you can set how many hours you want to work on whatever project you have, and try to be consistent with it by setting target hours for a day and logging them in them into the app and build a streak. Its intended to be self-hosted behind auth proxy.
 
 It is built as a submission for Solid hack 2024 and voting is ongoing right now.
 
@@ -81,7 +81,11 @@ Above type narrowing doesnt work for typescript, so you always have to use ! ass
 
 #### Other issues
 
-I couldnt get trpc errors not crash the server for some reason, it didnt happen on my previous project at some point but on latest dependencies, it happens, so I had to disable SSR. For some reason vinxi doesnt seem to load .env in production, so I had to use this workaround `"start": "node --env-file=.env .output/server/index.mjs",`. On programming side I couldnt figure out how to work with useTransition for calendar animation, so I just switch to new data after exit animation, instead of starting to load new async data immediately after exit animation starts. I couldnt figure out how to initialize signal with async data either.
+I couldnt get trpc errors not crash the server for some reason, it didnt happen on my previous project at some point but on latest dependencies, it happens, so I had to disable SSR. For some reason vinxi doesnt seem to load .env in production, so I had to use this workaround 
+```js
+"start": "node --env-file=.env .output/server/index.mjs",
+```
+On programming side I couldnt figure out how to work with useTransition for calendar animation, so I just switch to new data after exit animation, instead of starting to load new async data immediately after exit animation starts. I couldnt figure out how to initialize signal with async data either.
 
 
 ## Conclusion

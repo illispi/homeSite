@@ -36,17 +36,22 @@ const permalink = `${Astro.site.href}blog/${slug}`;
 </BaseLayout>
 
 <style is:global>
+
+  
   html {
     scroll-behavior: smooth;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1 {
     @apply text-xl font-bold dark:text-white max-w-screen-md w-11/12;
   }
+
+  h2 {
+    @apply text-3xl dark:text-white font-semibold my-4
+  }
+  h4 {
+    @apply text-xl dark:text-white my-4
+  }
+
   li {
     @apply my-4 text-xl font-semibold dark:text-white;
   }
@@ -55,7 +60,7 @@ const permalink = `${Astro.site.href}blog/${slug}`;
     @apply mb-6 text-left w-11/12 text-base lg:text-lg dark:text-white;
   }
   pre {
-    @apply w-full overflow-x-auto rounded-lg p-4;
+    @apply w-11/12 overflow-x-auto rounded-lg p-4;
   }
   article img {
     @apply relative w-screen left-[calc(-50vw_+_50%)] max-w-screen-md lg:left-0 lg:w-full
