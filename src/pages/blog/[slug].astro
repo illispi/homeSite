@@ -3,11 +3,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import getPostData from "../../utils/getPostData";
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob("../../data/blog-posts/*.md");
-  return posts.map((p) => ({
-    params: { slug: p.file.split("/").pop().split(".").shift() },
-    props: { post: p },
-  }));
+	const posts = await Astro.glob("../../data/blog-posts/*.md");
+	return posts.map((p) => ({
+		params: { slug: p.file.split("/").pop().split(".").shift() },
+		props: { post: p },
+	}));
 }
 
 const { Content, frontmatter } = Astro.props.post;
@@ -22,7 +22,7 @@ const permalink = `${Astro.site.href}blog/${slug}`;
   permalink={permalink}
   current="blog"
 >
-  <header class="my-6 md:my-12">
+  <header class="mt-24 mb-12">
     <p class="mx-auto text-center font-semibold dark:text-white">{publishDate} ~ {readingTime}</p>
     <h1 class="mx-auto text-center text-4xl md:text-6xl">{title}</h1>
   </header>
@@ -31,31 +31,51 @@ const permalink = `${Astro.site.href}blog/${slug}`;
       class="flex max-w-screen-md flex-auto flex-col items-center justify-start overflow-x-auto"
     >
       <Content />
+      <script src="https://giscus.app/client.js"
+        data-repo="illispi/homesite-comments"
+        data-repo-id="R_kgDONRIjmA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDONRIjmM4CkXms"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
     </article>
   </div>
 </BaseLayout>
 
 <style is:global>
+
+  
   html {
     scroll-behavior: smooth;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply text-3xl font-bold dark:text-white w-11/12;
+  h1 {
+    @apply text-xl font-bold dark:text-white max-w-screen-md w-11/12;
   }
-  li {
-    @apply my-4 text-xl font-semibold dark:text-white;
+
+  h2 {
+    @apply text-3xl dark:text-white font-semibold my-4
+  }
+  h4 {
+    @apply text-xl dark:text-white my-4
+  }
+
+  ul li{
+    @apply mb-6 text-left w-11/12 text-base lg:text-lg dark:text-white;
   }
 
   article p {
     @apply mb-6 text-left w-11/12 text-base lg:text-lg dark:text-white;
   }
   pre {
-    @apply w-full overflow-x-auto rounded-lg p-4;
+    @apply w-11/12 overflow-x-auto rounded-lg p-4;
   }
   article img {
     @apply relative w-screen left-[calc(-50vw_+_50%)] max-w-screen-md lg:left-0 lg:w-full

@@ -7,9 +7,9 @@ const permalink = `${Astro.site.href}blog`;
 
 let allPosts = await Astro.glob("../../data/blog-posts/*.md");
 allPosts = allPosts.sort(
-  (a, b) =>
-    new Date(b.frontmatter.publishDate).valueOf() -
-    new Date(a.frontmatter.publishDate).valueOf(),
+	(a, b) =>
+		new Date(b.frontmatter.publishDate).valueOf() -
+		new Date(a.frontmatter.publishDate).valueOf(),
 );
 ---
 
@@ -19,7 +19,7 @@ allPosts = allPosts.sort(
   permalink={permalink}
   current="blog"
 >
-  <div class="flex min-h-screen w-full flex-col items-center justify-start">
+  <div class="flex min-h-screen w-full flex-col items-center justify-start mt-16">
     <h1 class="my-12 text-4xl dark:text-white">Blog</h1>
     <div
       class="flex w-full flex-auto flex-col items-center justify-start gap-6 overflow-x-auto"
@@ -31,7 +31,7 @@ allPosts = allPosts.sort(
             <a href={href} class="w-11/12 max-w-screen-md items-center p-6 overflow-hidden rounded-3xl shadow-2xl shadow-zinc-800 transition-all hover:scale-105 dark:shadow-transparent border-2">
               {index !== 0 && <hr />}
               <div class="flex flex-col gap-6 w-full dark:text-white" >
-                <h2 class="text-2xl md:text-4xl font-bold text-center dark:text-white">
+                <h2 class="text-lg md:text-4xl font-bold text-center dark:text-white">
                   {post.frontmatter.title}
                 </h2>
                 <div >
