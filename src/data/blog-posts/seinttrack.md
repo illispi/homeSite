@@ -61,4 +61,31 @@ Its not perfect since it uses .length and not counting uniqueId:s for deeper men
 
 Whole project was fairly simple to program, only slighly tricky part was the main calendar, since it's custom implementation.
 
+Lot of my bugs were related to 0 evaluating as falsy. You would think I would have learned from it quickly, but it tripped me quite often.
+
 I should have probably done proper tag system and not the current tag and tag group system, but I realized this too late, so it will have to be done after project
+
+## Solidjs thoughts
+
+I had already done other project in Solid start, so I was quite familiar with it on basics level. One of the best things is that is easy to work with vanilla js libraries. But here are some minor annoyances I had with solid start.
+
+#### Show type narrowing
+
+```js
+<Show when={solidQueryA.data && solidQueryB.data}>
+{solidQueryA.data! && solidQueryB.data!}
+</Show>
+```
+
+Above type narrowing doesnt work for typescript, so you always have to use ! assertion, which kind of error prone. There is a callback version of `<Show>`, but I dont like renaming solidQueryA.data to data for no reason, and in this example it doesnt even work since there is AND condition in when. I also kind of wish you could do `<For>` component as well without renaming variable and just use index inside callback.
+
+#### Other issues
+
+I couldnt get trpc errors not crash the server for some reason, it didnt happen on my previous project at some point but on latest dependencies, it happens, so I had to disable SSR. For some reason vinxi doesnt seem to load .env in production, so I had to use this workaround `"start": "node --env-file=.env .output/server/index.mjs",`. On programming side I couldnt figure out how to work with useTransition for calendar animation, so I just switch to new data after exit animation, instead of starting to load new async data immediately after exit animation starts. I couldnt figure out how to initialize signal with async data either.
+
+
+## Conclusion
+
+I think it was pretty fun to participate in this hack, and I think its good way to get new users to try solidjs and ecosystem got some good contributions from challenges.
+
+
