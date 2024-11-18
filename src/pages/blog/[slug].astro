@@ -67,15 +67,12 @@ const permalink = `${Astro.site.href}blog/${slug}`;
     @apply text-xl dark:text-white my-4
   }
 
-  ul li{
-    @apply mb-6 text-left w-11/12 text-base lg:text-lg dark:text-white;
-  }
 
   article p {
     @apply mb-6 text-left w-11/12 text-base lg:text-lg dark:text-white;
   }
   pre {
-    @apply w-11/12 overflow-x-auto rounded-lg p-4;
+    @apply w-11/12 overflow-x-auto rounded-lg p-4 max-w-sm md:max-w-2xl lg:max-w-full;
   }
   article img {
     @apply relative w-screen left-[calc(-50vw_+_50%)] max-w-screen-md lg:left-0 lg:w-full
