@@ -82,15 +82,15 @@ Similarly, I wish <For> components allowed using indices directly inside the cal
 
 #### Other issues
 
-- tRPC Errors: For some reason, I couldn’t prevent tRPC errors from crashing the server. This issue didn’t occur in my previous project, but with the latest dependencies, it surfaced. To work around this, I had to disable SSR.
+tRPC Errors: For some reason, I couldn’t prevent tRPC errors from crashing the server. This issue didn’t occur in my previous project, but with the latest dependencies, it surfaced. To work around this, I had to disable SSR.
 
-- Environment Variables: Vinxi didn’t load .env files in production, so I resorted to this workaround:
+Environment Variables: Vinxi didn’t load .env files in production, so I resorted to this workaround:
 ```js
 "start": "node --env-file=.env .output/server/index.mjs",
 ```
-- Animations & Transitions: I couldn’t figure out how to use useTransition effectively for calendar animations. As a result, I switched to loading new data only after the exit animation completes, instead of starting it during the exit animation.
+Animations & Transitions: I couldn’t figure out how to use useTransition effectively for calendar animations. As a result, I switched to loading new data only after the exit animation completes, instead of starting it during the exit animation.
 
-- Signals with Async Data: I struggled to initialize a signal with asynchronous data.
+Signals with Async Data: I struggled to initialize a signal with asynchronous data.
 
 ## Conclusion
 
