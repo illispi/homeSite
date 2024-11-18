@@ -3,11 +3,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import getPostData from "../../utils/getPostData";
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob("../../data/blog-posts/*.md");
-  return posts.map((p) => ({
-    params: { slug: p.file.split("/").pop().split(".").shift() },
-    props: { post: p },
-  }));
+	const posts = await Astro.glob("../../data/blog-posts/*.md");
+	return posts.map((p) => ({
+		params: { slug: p.file.split("/").pop().split(".").shift() },
+		props: { post: p },
+	}));
 }
 
 const { Content, frontmatter } = Astro.props.post;
@@ -22,7 +22,7 @@ const permalink = `${Astro.site.href}blog/${slug}`;
   permalink={permalink}
   current="blog"
 >
-  <header class="my-6 md:my-12">
+  <header class="mt-24 mb-12">
     <p class="mx-auto text-center font-semibold dark:text-white">{publishDate} ~ {readingTime}</p>
     <h1 class="mx-auto text-center text-4xl md:text-6xl">{title}</h1>
   </header>
@@ -45,7 +45,7 @@ const permalink = `${Astro.site.href}blog/${slug}`;
   h4,
   h5,
   h6 {
-    @apply text-3xl font-bold dark:text-white w-11/12;
+    @apply text-xl font-bold dark:text-white max-w-screen-md w-11/12;
   }
   li {
     @apply my-4 text-xl font-semibold dark:text-white;
