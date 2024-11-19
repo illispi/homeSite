@@ -28,8 +28,8 @@ allPosts = allPosts.sort(
         allPosts.map((post, index) => {
           const href = `/blog/${post.file.split("/").pop().split(".").shift()}`;
           return (
-            <a href={href} class="w-11/12 max-w-screen-md items-center p-6 overflow-hidden rounded-3xl shadow-2xl shadow-zinc-800 transition-all hover:scale-105 dark:shadow-transparent border-2">
-              {index !== 0 && <hr />}
+            <a href={href} class="w-11/12 max-w-screen-md items-center p-6 overflow-hidden rounded-3xl shadow-md shadow-zinc-800 transition-all hover:scale-105 dark:shadow-transparent border-2">
+              {/* {index !== 0 && <hr />} */}
               <div class="flex flex-col gap-6 w-full dark:text-white" >
                 <h2 class="text-lg md:text-4xl font-bold text-center dark:text-white">
                   {post.frontmatter.title}
