@@ -14,110 +14,110 @@ const permalink = Astro.site.href;
 
 <BaseLayout title={title} description={description} permalink={permalink}>
   <div class="relative flex items-center justify-center">
-    <div class="absolute left-0 -z-10 hidden h-full w-1/2 bg-zinc-800 lg:flex">
-    </div>
-    <div class="absolute left-1/2 -z-10 hidden h-full w-1/2 bg-white lg:flex">
-    </div>
-    <div
-      class="flex h-full w-full max-w-screen-xl flex-col items-center justify-center lg:w-11/12 lg:flex-row"
-    >
-      <div
-        class="flex w-full flex-1 flex-col items-center justify-center bg-zinc-800 py-8 lg:bg-transparent lg:p-0"
-      >
-        <h1
-          class="bg-transparent text-center text-6xl font-semibold text-amber-400 lg:text-9xl"
-        >
-          Hello!
-        </h1>
-      </div>
-      <div
-        class="relative hidden h-[500px] w-[300px] overflow-hidden bg-white lg:block"
-      >
-        <div
-          class="relative -left-[260px] -top-40 h-[800px] w-[400px] rotate-[17deg] bg-zinc-800"
-        >
-        </div>
-      </div>
-      <div
-        class="flex w-full flex-1 items-center justify-center bg-white py-4 shadow-[inset_0px_0px_126px_22px_rgba(251,191,36,1)] lg:h-[500px] lg:py-0 lg:shadow-none"
-      >
-        <Picture
-          src={landscape}
-          alt="Snowy landscape"
-          formats={["avif"]}
+	<div class="absolute left-0 -z-10 hidden h-full w-1/2 bg-zinc-800 lg:flex">
+	</div>
+	<div class="absolute left-1/2 -z-10 hidden h-full w-1/2 bg-white lg:flex">
+	</div>
+	<div
+	  class="flex h-full w-full max-w-screen-xl flex-col items-center justify-center lg:w-11/12 lg:flex-row"
+	>
+	  <div
+		class="flex w-full flex-1 flex-col items-center justify-center bg-zinc-800 py-8 lg:bg-transparent lg:p-0"
+	  >
+		<h1
+		  class="bg-transparent text-center text-6xl font-semibold text-amber-400 lg:text-9xl"
+		>
+		  Hello!
+		</h1>
+	  </div>
+	  <div
+		class="relative hidden h-[500px] w-[300px] overflow-hidden bg-white lg:block"
+	  >
+		<div
+		  class="relative -left-[260px] -top-40 h-[800px] w-[400px] rotate-[17deg] bg-zinc-800"
+		>
+		</div>
+	  </div>
+	  <div
+		class="flex w-full flex-1 items-center justify-center bg-white py-4 shadow-[inset_0px_0px_126px_22px_rgba(251,191,36,1)] lg:h-[500px] lg:py-0 lg:shadow-none"
+	  >
+		<Picture
+		  src={landscape}
+		  alt="Snowy landscape"
+		  formats={["avif"]}
 		  loading="eager"
-          class="w-11/12 lg:w-full max-w-lg rounded-full xl:p-4 m-auto h-auto aspect-square"
-          widths={[240, 540, 720, landscape.width]}
-          sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${landscape.width}px`}
-          
-        />
-      </div>
-    </div>
+		  class="w-11/12 lg:w-full max-w-lg rounded-full xl:p-4 m-auto h-auto aspect-square"
+		  widths={[240, 540, 720, landscape.width]}
+		  sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${landscape.width}px`}
+		  
+		/>
+	  </div>
+	</div>
   </div>
   <div
-    class="hidden h-20 w-full items-center justify-center lg:flex lg:bg-amber-500"
+	class="hidden h-20 w-full items-center justify-center lg:flex lg:bg-amber-500"
   >
   </div>
   <div class="flex w-full items-center justify-center bg-zinc-800">
-    <h2
-      class="block flex-1 py-16 text-center text-6xl font-semibold text-amber-400"
-    >
-      Projects:
-    </h2>
+	<h2
+	  class="block flex-1 py-16 text-center text-6xl font-semibold text-amber-400"
+	>
+	  Projects:
+	</h2>
   </div>
   <div class="my-12 flex w-full flex-col items-center justify-start  xl:grid xl:grid-cols-2 xl:max-w-screen-2xl xl:mx-auto justify-items-center place-content-stretch gap-16">
-    <div class="flex w-11/12 max-w-3xl flex-col items-center justify-center">
-      <a
-        class="overflow-hidden rounded-3xl shadow-2xl shadow-zinc-800 transition-all hover:scale-105 dark:shadow-zinc-400"
-        href="https://poll.delvis.org"
-      >
-       
-        <div  class="size-full max-w-screen-md max-h-96">
+	<div class="flex w-11/12 max-w-3xl flex-col items-center justify-center">
+	  <a
+		class="overflow-hidden rounded-3xl shadow-2xl shadow-zinc-800 transition-all hover:scale-105 dark:shadow-zinc-400"
+		href="https://poll.delvis.org"
+	  >
+	   
+		<div  class="size-full max-w-screen-md max-h-96">
 
-        <Picture
-        src={storiesIcon}
-        alt="Stories icon"
+		<Picture
+		src={storiesIcon}
+		alt="Stories icon"
 		class="size-full object-cover max-h-96 aspect-[2/1]"
-        formats={["avif"]}
-        widths={[240, 540, 720, storiesIcon.width]}
-        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${storiesIcon.width}px`}
-        />
-      </div>
+		formats={["avif"]}
+		widths={[240, 540, 720, storiesIcon.width]}
+		sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${storiesIcon.width}px`}
+		/>
+	  </div>
 	  <div class="flex justify-center items-center h-32 px-8">
 
 		  <p class="text-center text-xl dark:text-white">
 			  Website made with solidJS. Includes poll and shared articles.
 			</p>
 		</div>
-      </a>
-    </div>
-    <div class="flex w-11/12 max-w-3xl flex-col items-center justify-center">
-      <a
-        class="overflow-hidden rounded-3xl shadow-2xl shadow-zinc-800 transition-all hover:scale-105 dark:shadow-zinc-400"
-        href="https://demoseintrack.delvis.org"
-      >
-       
-        <div class="size-full max-w-screen-md max-h-96 overflow-hidden">
+	  </a>
+	</div>
+	<div class="flex w-11/12 max-w-3xl flex-col items-center justify-center">
+	  <a
+		class="overflow-hidden rounded-3xl shadow-2xl shadow-zinc-800 transition-all hover:scale-105 dark:shadow-zinc-400"
+		href="https://demoseintrack.delvis.org"
+	  >
+	   
+		<div class="size-full max-w-screen-md max-h-96 overflow-hidden">
 
-        <Picture
-        
-        src={seintrackIcon}
-        alt="Stories icon"
-        formats={["avif"]}
+		<Picture
+		
+		src={seintrackIcon}
+		alt="Stories icon"
+		formats={["avif"]}
 
 
-        
+		
 		class="size-full object-cover max-h-96 aspect-[2/1]"
-        widths={[240, 540, 720, seintrackIcon.width]}
-        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${seintrackIcon.width}px`}
-        />
-      </div>
-	  <div class="flex justify-center items-center h-32 px-8">
-        <p class="text-center text-xl dark:text-white">
-          Made for Solid hack 2024. Seinfeld calendar and time tracking hybrid.
-        </p>
+		widths={[240, 540, 720, seintrackIcon.width]}
+		sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${seintrackIcon.width}px`}
+		/>
 	  </div>
-      </a>
-    </div>
+	  <div class="flex justify-center items-center h-32 px-8">
+		<p class="text-center text-xl dark:text-white">
+		  Made for Solid hack 2024. Seinfeld calendar and time tracking hybrid.
+		</p>
+	  </div>
+	  </a>
+	</div>
   </div>
 </BaseLayout>

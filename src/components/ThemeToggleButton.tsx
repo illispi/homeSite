@@ -7,6 +7,19 @@ import {
 	createSignal,
 } from "solid-js";
 
+const theme = "preferred_color_scheme";
+
+function updateGiscusTheme(newTheme) {
+	const iframe = document.querySelector("iframe.giscus-frame");
+	console.log(iframe);
+	if (iframe) {
+		iframe.contentWindow.postMessage(
+			{ giscus: { setConfig: { theme: newTheme } } },
+			"https://giscus.app",
+		);
+	}
+}
+
 const ThemeToggleButton: Component<{}> = (props) => {
 	const rootEl =
 		typeof document !== "undefined" ? document.documentElement : null;
@@ -15,21 +28,22 @@ const ThemeToggleButton: Component<{}> = (props) => {
 	const test = () => {
 		if (rootEl?.classList.contains("dark")) {
 			return "dark";
-		} else if (
-			typeof localStorage !== "undefined" &&
-			localStorage.getItem("theme")
-		) {
+		}
+		if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
 			return localStorage.getItem("theme") ?? "light";
-		} else if (
+		}
+		if (
 			typeof window !== "undefined" &&
 			window.matchMedia("(prefers-color-scheme: dark)").matches
 		) {
 			return "dark";
 		}
+		return "dark";
 	};
 	const [theme, setTheme] = createSignal<"light" | "dark">(test());
 
 	createEffect(() => {
+		console.log(theme());
 		if (rootEl && theme() === "light") {
 			document.body.classList.add("colorTransition");
 			rootEl.classList.remove("dark");
@@ -51,9 +65,11 @@ const ThemeToggleButton: Component<{}> = (props) => {
 				when={theme() === "dark"}
 				fallback={
 					<button
+						type="button"
 						onClick={() => {
 							setTheme("dark");
 							localStorage.setItem("theme", theme());
+							updateGiscusTheme("dark");
 						}}
 					>
 						<svg
@@ -69,9 +85,11 @@ const ThemeToggleButton: Component<{}> = (props) => {
 				}
 			>
 				<button
+					type="button"
 					onClick={() => {
 						setTheme("light");
 						localStorage.setItem("theme", theme());
+						updateGiscusTheme("light");
 					}}
 				>
 					<svg
