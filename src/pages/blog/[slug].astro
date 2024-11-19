@@ -33,38 +33,44 @@ const permalink = `${Astro.site.href}blog/${slug}`;
       <Content />
       
       <div class="w-full" id="giscus"></div>
+      <script >
+        document.addEventListener('astro:page-load', () => {
+        // Get the theme value from localStorage, defaulting to "preferred_color_scheme" if not set
+        const themeLocal = localStorage.getItem('theme') || 'preferred_color_scheme';
+      
+        // Create a script element dynamically
+        const script = document.createElement('script');
+        script.src = "https://giscus.app/client.js";
+        script.async = true;
+      
+        // Set the attributes for the script tag
+        script.setAttribute('data-repo', 'illispi/homesite-comments');
+        script.setAttribute('data-repo-id', 'R_kgDONRIjmA');
+        script.setAttribute('data-category', 'Announcements');
+        script.setAttribute('data-category-id', 'DIC_kwDONRIjmM4CkXms');
+        script.setAttribute('data-mapping', 'pathname');
+        script.setAttribute('data-strict', '0');
+        script.setAttribute('data-reactions-enabled', '1');
+        script.setAttribute('data-emit-metadata', '0');
+        script.setAttribute('data-input-position', 'bottom');
+        script.setAttribute('data-theme', themeLocal);  // Set the theme based on localStorage
+        script.setAttribute('data-lang', 'en');
+        script.setAttribute('crossorigin', 'anonymous');
+      
+        // Append the script to the document body
+        const exists =  document.getElementById("giscus")
+        if(exists){
+
+          exists.appendChild(script)
+        }})
+      </script>
 
 
     </article>
   </div>
 </BaseLayout>
 
-<script >
-    // Get the theme value from localStorage, defaulting to "preferred_color_scheme" if not set
-    const theme = localStorage.getItem('theme') || 'preferred_color_scheme';
-  
-    // Create a script element dynamically
-    const script = document.createElement('script');
-    script.src = "https://giscus.app/client.js";
-    script.async = true;
-  
-    // Set the attributes for the script tag
-    script.setAttribute('data-repo', 'illispi/homesite-comments');
-    script.setAttribute('data-repo-id', 'R_kgDONRIjmA');
-    script.setAttribute('data-category', 'Announcements');
-    script.setAttribute('data-category-id', 'DIC_kwDONRIjmM4CkXms');
-    script.setAttribute('data-mapping', 'pathname');
-    script.setAttribute('data-strict', '0');
-    script.setAttribute('data-reactions-enabled', '1');
-    script.setAttribute('data-emit-metadata', '0');
-    script.setAttribute('data-input-position', 'bottom');
-    script.setAttribute('data-theme', theme);  // Set the theme based on localStorage
-    script.setAttribute('data-lang', 'en');
-    script.setAttribute('crossorigin', 'anonymous');
-  
-    // Append the script to the document body
-    document.getElementById('giscus').appendChild(script);
-  </script>
+
 
 
 <style is:global>
