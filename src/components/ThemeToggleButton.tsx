@@ -41,31 +41,23 @@ const ThemeToggleButton: Component<{}> = (props) => {
 	};
 	const [theme, setTheme] = createSignal<"light" | "dark">(test());
 
-	const [prev, setPrev] = createSignal(false);
+	let teset: Timer;
 
 	createEffect(() => {
+		clearTimeout(teset);
+
 		if (rootEl && theme() === "light") {
 			document.body.classList.add("colorTransition");
 			rootEl.classList.remove("dark");
-			const teset = setTimeout(() => {
+			teset = setTimeout(() => {
 				document.body.classList.remove("colorTransition");
-				setPrev(true);
 			}, 1000);
-			if (prev()) {
-				setPrev(false);
-				clearTimeout(teset);
-			}
 		} else if (rootEl && theme() === "dark") {
 			document.body.classList.add("colorTransition");
 			rootEl.classList.add("dark");
-			const teset = setTimeout(() => {
+			teset = setTimeout(() => {
 				document.body.classList.remove("colorTransition");
-				setPrev(true);
 			}, 1000);
-			if (prev()) {
-				setPrev(false);
-				clearTimeout(teset);
-			}
 		}
 	});
 
