@@ -9,9 +9,8 @@ import {
 
 const theme = "preferred_color_scheme";
 
-function updateGiscusTheme(newTheme) {
+export function updateGiscusTheme(newTheme) {
 	const iframe = document.querySelector("iframe.giscus-frame");
-	console.log(iframe);
 	if (iframe) {
 		iframe.contentWindow.postMessage(
 			{ giscus: { setConfig: { theme: newTheme } } },
@@ -42,20 +41,31 @@ const ThemeToggleButton: Component<{}> = (props) => {
 	};
 	const [theme, setTheme] = createSignal<"light" | "dark">(test());
 
+	const [prev, setPrev] = createSignal(false);
+
 	createEffect(() => {
-		console.log(theme());
 		if (rootEl && theme() === "light") {
 			document.body.classList.add("colorTransition");
 			rootEl.classList.remove("dark");
-			setTimeout(() => {
+			const teset = setTimeout(() => {
 				document.body.classList.remove("colorTransition");
+				setPrev(true);
 			}, 1000);
+			if (prev()) {
+				setPrev(false);
+				clearTimeout(teset);
+			}
 		} else if (rootEl && theme() === "dark") {
 			document.body.classList.add("colorTransition");
 			rootEl.classList.add("dark");
-			setTimeout(() => {
+			const teset = setTimeout(() => {
 				document.body.classList.remove("colorTransition");
+				setPrev(true);
 			}, 1000);
+			if (prev()) {
+				setPrev(false);
+				clearTimeout(teset);
+			}
 		}
 	});
 
