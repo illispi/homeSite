@@ -3,9 +3,9 @@ import { ViewTransitions } from "astro:transitions";
 import "../styles/global.css";
 
 export interface Props {
-  title: string;
-  description: string;
-  permalink: string;
+	title: string;
+	description: string;
+	permalink: string;
 }
 
 const { title, description, permalink } = Astro.props;
@@ -54,8 +54,10 @@ const socialUrl = Astro.site.href + "assets/social.png";
     theme === "dark" ||
     (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
   ) {
+    localStorage.setItem("theme", "dark")
     root.classList.add("dark");
   } else {
+    localStorage.setItem("theme", "light")
     root.classList.remove("dark");
   }
 </script>
@@ -66,6 +68,5 @@ const socialUrl = Astro.site.href + "assets/social.png";
       ? document.documentElement.classList.add("dark")
       : null;
 
-    console.log(localStorage.theme);
   });
 </script>

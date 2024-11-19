@@ -1,24 +1,24 @@
 @keyframes slideOutFade {
-  from {
-    transform: translateX(0%);
-    opacity: 100%;
-  }
+	from {
+		transform: translateX(0%);
+		opacity: 100%;
+	}
 
-  to {
-    transform: translateX(-100px);
-    opacity: 0%;
-  }
+	to {
+		transform: translateX(-100px);
+		opacity: 0%;
+	}
 }
 @keyframes slideInFade {
-  from {
-    transform: translateX(100px);
-    opacity: 0%;
-  }
+	from {
+		transform: translateX(100px);
+		opacity: 0%;
+	}
 
-  to {
-    transform: translateX(0%);
-    opacity: 100%;
-  }
+	to {
+		transform: translateX(0%);
+		opacity: 100%;
+	}
 }
 
 /* ::view-transition-group(header) {
@@ -27,10 +27,10 @@
 
 ::view-transition-old(header),
 ::view-transition-new(header) {
-  animation: none;
-  mix-blend-mode: normal;
+	animation: none;
+	mix-blend-mode: normal;
 }
 
 .colorTransition {
-  transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
 }

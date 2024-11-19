@@ -31,24 +31,41 @@ const permalink = `${Astro.site.href}blog/${slug}`;
       class="flex max-w-screen-md flex-auto flex-col items-center justify-start overflow-x-auto"
     >
       <Content />
-      <script src="https://giscus.app/client.js"
-        data-repo="illispi/homesite-comments"
-        data-repo-id="R_kgDONRIjmA"
-        data-category="Announcements"
-        data-category-id="DIC_kwDONRIjmM4CkXms"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-</script>
+      
+      <div class="w-full" id="giscus"></div>
+
+
     </article>
   </div>
 </BaseLayout>
+
+<script >
+    // Get the theme value from localStorage, defaulting to "preferred_color_scheme" if not set
+    const theme = localStorage.getItem('theme') || 'preferred_color_scheme';
+  
+    // Create a script element dynamically
+    const script = document.createElement('script');
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+  
+    // Set the attributes for the script tag
+    script.setAttribute('data-repo', 'illispi/homesite-comments');
+    script.setAttribute('data-repo-id', 'R_kgDONRIjmA');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDONRIjmM4CkXms');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'bottom');
+    script.setAttribute('data-theme', theme);  // Set the theme based on localStorage
+    script.setAttribute('data-lang', 'en');
+    script.setAttribute('crossorigin', 'anonymous');
+  
+    // Append the script to the document body
+    document.getElementById('giscus').appendChild(script);
+  </script>
+
 
 <style is:global>
 
